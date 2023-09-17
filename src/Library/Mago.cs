@@ -11,7 +11,7 @@ namespace RolePlay
         public Mago(string nombre, int nivel, int vida, int magia):base(nombre, nivel, vida, magia , "Wizard")
         {
             HabilidadesMagicas=new List<string>();
-            LibroDeHechizos=new LibroDeHechizos("Libro de Hechizos de " + nombre);
+             LibroDeHechizos = new LibroDeHechizos("Libro de Hechizos de " + nombre);
         }
         public void AprenderHechizo(string hechizo)
         {

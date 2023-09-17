@@ -65,5 +65,7 @@ namespace RolePlay
                 Console.WriteLine($"{Nombre} no tiene ese elemento en su inventario.");
             }
         }
+
+        
     }
 }

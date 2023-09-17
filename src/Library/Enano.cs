@@ -5,7 +5,10 @@ namespace RolePlay
 {
     public class Enano: Personaje
     {
-        
+        public Enano(string nombre, int nivel, int vida, int magia):base(nombre, nivel, vida, magia , "Enano")
+        {
+            // Habilidades especiales
+        }
     }
 
 }
