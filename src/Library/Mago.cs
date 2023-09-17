@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 namespace RolePlay
 {
-    public class Wizard: Personaje
+    public class Mago: Personaje
     {
         public List<string> HabilidadesMagicas{get; }
         public LibroDeHechizos LibroDeHechizos{get; }
 
-        public Wizard(string nombre, int nivel, int vida, int magia):base(nombre, nivel, vida, magia , "Wizard")
+        public Mago(string nombre, int nivel, int vida, int magia):base(nombre, nivel, vida, magia , "Wizard")
         {
             HabilidadesMagicas=new List<string>();
             LibroDeHechizos=new LibroDeHechizos("Libro de Hechizos de " + nombre);

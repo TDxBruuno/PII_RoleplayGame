@@ -21,13 +21,13 @@ namespace RolePlay
             Tipo=tipo;
             Items= new List<Elemento>();
         }
-        public void Attack(Personaje objetivo)
+        public void Ataque(Personaje objetivo)
         {
             int daño=Nivel*5; 
             objetivo.Vida-=daño;
             Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {daño} puntos de daño.");
         }
-        public void Defend()
+        public void Defensa()
         {
             int resistenciaExtra=Nivel*2; 
             Magia-=10; 
@@ -49,13 +49,13 @@ namespace RolePlay
             {
                 if (item.Tipo == "Arma")
                 {
-                    int aumentoAttack = item.ValorAttack;
+                    int aumentoAttack = item.ValorAtaque;
                     Nivel+=aumentoAttack;
                     Console.WriteLine($"{Nombre} usa un {item.Nombre} y aumenta su ataque en {aumentoAttack} puntos.");
                 }
                 else if (item.Tipo=="Armadura")
                 {
-                    int aumentoDefend = item.ValorDefend;
+                    int aumentoDefend = item.ValorDefensa;
                     Vida+=aumentoDefend;
                     Console.WriteLine($"{Nombre} usa una {item.Nombre} y aumenta su vida en {aumentoDefend} puntos.");
                 }

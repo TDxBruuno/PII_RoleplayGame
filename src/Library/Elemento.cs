@@ -7,15 +7,15 @@ namespace RolePlay
     {
         public string Nombre{get; }
         public string Tipo{get; }
-        public int ValorAttack{get; set; }
-        public int ValorDefend{get; set; }
+        public int ValorAtaque{get; set; }
+        public int ValorDefensa{get; set; }
         public bool PropiedadesMagicas{get; set; }
         public Elemento(string nombre, string tipo, int valorAttack=0, int valorDefend=0)
         {
             Nombre=nombre;
             Tipo=tipo;
-            ValorAttack=valorAttack;
-            ValorDefend=valorDefend;
+            ValorAtaque=valorAttack;
+            ValorDefensa=valorDefend;
             PropiedadesMagicas=false;
         }
         public void Usar()
@@ -36,8 +36,8 @@ namespace RolePlay
         }
         public void Mejorar(int aumentoPoder)
         {
-            ValorAttack+=aumentoPoder;
-            ValorDefend+=aumentoPoder;
+            ValorAtaque+=aumentoPoder;
+            ValorDefensa+=aumentoPoder;
             Console.WriteLine($"{Nombre} ha sido mejorado y su poder aumenta en {aumentoPoder} puntos.");
         }
     }

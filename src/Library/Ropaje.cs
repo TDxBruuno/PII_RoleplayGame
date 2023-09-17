@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 namespace RolePlay
 {
-    public class Armadura :Elemento
+    public class Ropaje :Elemento
     {
-        public Armadura(string nombre, int valorDefend) : base(nombre, "Armadura", valorDefend)
+        public Ropaje(string nombre, int valorDefend) : base(nombre, "Armadura", valorDefend)
         {}
     }
 
