@@ -30,6 +30,7 @@ namespace RolePlay.Test
 
             Assert.IsTrue(personaje.Vida > vidaInicialPersonaje);
         }
+
     }
 
 }

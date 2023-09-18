@@ -3,11 +3,94 @@ using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 namespace RolePlay
 {
-    public class Enano: Personaje
+    public class Enano
     {
-        public Enano(string nombre, int vida, int magia):base(nombre, vida, magia , "Enano", 25, 15)
+        public string Nombre{get; }
+        public int ValorAtaque{get; set;}
+        public int ValorDefensa{get; set;}
+        public int Magia{get; set;}
+        public int Vida{get; set;}
+        public string Tipo{get; }
+        public List<Elemento> Items {get; }
+       
+        public Enano(string nombre, int magia, int vida, string tipo, int valorAtaque, int valorDefensa)
         {
-            // Habilidades especiales
+            Nombre=nombre;
+            Magia=magia;
+            Vida=vida;
+            Tipo=tipo;
+            ValorAtaque=valorAtaque;
+            ValorDefensa=valorDefensa;
+            Items= new List<Elemento>();
+        }
+
+        public void Hechizo( objetivo )
+        {
+            if (Tipo== "Mago")
+            {
+                int poderHechizo = Magia * 3; 
+                Magia-=20; 
+                objetivo.Vida-=poderHechizo;
+                Console.WriteLine($"{Nombre} lanza un hechizo a {objetivo.Nombre} y causa {poderHechizo} puntos de daño.");
+            }
+        }
+       
+        public int calcularAtaque()
+        {
+            int valorAtaqueTotal = ValorAtaque;
+
+            foreach (Elemento item in Items)
+            {
+                if (item.Tipo == "Arma")
+                {
+                    valorAtaqueTotal += item.ValorAtaque;
+                }
+            }
+
+            return valorAtaqueTotal;
+        }
+
+        public int calcularDefensa()
+        {
+            int valorDefensaTotal = ValorDefensa;
+
+            foreach (Elemento item in Items)
+            {
+                if (item.Tipo == "Armadura")
+                {
+                    valorDefensaTotal += item.ValorDefensa;
+                }
+            }
+
+            return valorDefensaTotal;
+        }
+
+        public void Atacar( Enano objetivo)
+        {
+            int ataqueTotal = calcularAtaque();
+            objetivo.Vida -= ataqueTotal;
+            Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {ataqueTotal} puntos de daño.");
+        }
+
+        public void Atacar(Elfo objetivo)
+        {
+            int ataqueTotal = calcularAtaque();
+            objetivo.Vida -= ataqueTotal;
+            Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {ataqueTotal} puntos de daño.");
+        }
+
+        public void Atacar(Mago objetivo)
+        {
+            int ataqueTotal = calcularAtaque();
+            objetivo.Vida -= ataqueTotal;
+            Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {ataqueTotal} puntos de daño.");
+        }
+
+        public void Defensa()
+        {
+            int defensaTotal = calcularDefensa();
+            Vida += defensaTotal;
+            Console.WriteLine($"{Nombre} se defiende y gana {defensaTotal} puntos de resistencia.");
         }
     }
 

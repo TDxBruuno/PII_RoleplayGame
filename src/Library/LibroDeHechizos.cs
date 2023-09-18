@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 namespace RolePlay
 {
-    public class LibroDeHechizos
+    public class LibroDeHechizos : Elemento 
 {
     private List<Hechizo> Hechizos { get; set; }
+    
 
-    public string Nombre { get; set; }
 
-    public LibroDeHechizos(string nombre)
+    public LibroDeHechizos(string nombre, string tipo):base(nombre,tipo,0,0)
     {
-        Nombre = nombre;
         Hechizos = new List<Hechizo>();
     }
 
