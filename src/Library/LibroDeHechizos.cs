@@ -9,21 +9,21 @@ namespace RolePlay
 
     public string Nombre { get; set; }
 
-    public LibroDeHechizos(string nombre)
+    public LibroDeHechizos()
     {
         Nombre = nombre;
         Hechizos = new List<Hechizo>();
     }
 
     // Método para agregar un hechizo basado en una cadena de texto
-    public void AgregarHechizo(string hechizoNombre)
+    public void AgregarTextHechizo(string hechizoNombre)
     {
         Hechizo nuevoHechizo = new Hechizo(hechizoNombre, 0); // Asumiendo que el poder del hechizo es 0 por defecto
         Hechizos.Add(nuevoHechizo);
     }
 
     // Método para agregar un hechizo basado en un objeto Hechizo
-    public void AgregarHechizo(Hechizo hechizo)
+    public void AgregarObjHechizo(Hechizo hechizo)
     {
         Hechizos.Add(hechizo);
     }
