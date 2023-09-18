@@ -24,7 +24,18 @@ namespace RolePlay
             Items= new List<Elemento>();
         }
 
-        public void Hechizo( objetivo )
+        public void Hechizo(Elfo objetivo )
+        {
+            if (Tipo== "Mago")
+            {
+                int poderHechizo = Magia * 3; 
+                Magia-=20; 
+                objetivo.Vida-=poderHechizo;
+                Console.WriteLine($"{Nombre} lanza un hechizo a {objetivo.Nombre} y causa {poderHechizo} puntos de daño.");
+            }
+        }
+
+        public void Hechizo(Mago objetivo )
         {
             if (Tipo== "Mago")
             {
