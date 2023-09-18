@@ -11,6 +11,7 @@ namespace RolePlay
         public int DefensaTotal{get; set;}
         public int Magia{get; set;}
         public int Vida{get; set;}
+        public int VidaInicial {get; set;}
         public string Tipo{get; }
         public List<Elemento> Items {get; }
         
@@ -19,7 +20,7 @@ namespace RolePlay
             Nombre=nombre;
             Magia=magia;
             Vida=vida;
-            Vida=vida;
+            VidaInicial=vida;
             Tipo=tipo;
             Items= new List<Elemento>();
         }
@@ -31,7 +32,7 @@ namespace RolePlay
         }
         public void Defensa()
         {
-            int resistenciaExtra=AtaqueTotal*2; 
+            int resistenciaExtra=DefensaTotal*2; 
             Magia-=10; 
             Console.WriteLine($"{Nombre} se defiende y gana {resistenciaExtra} puntos de resistencia.");
         }
