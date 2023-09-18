@@ -5,7 +5,7 @@ namespace RolePlay
 {
     public class Ropaje :Elemento
     {
-        public Ropaje(string nombre, int valorDefend) : base(nombre, "Armadura", valorDefend)
+        public Ropaje(string nombre, int valorDefend) : base(nombre, "Armadura", 0, 15)
         {}
     }
 

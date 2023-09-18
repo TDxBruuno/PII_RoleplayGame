@@ -7,38 +7,27 @@ namespace RolePlay
     public class Personaje
     {
         public string Nombre{get; }
-        public int AtaqueTotal{get; set;}
-        public int DefensaTotal{get; set;}
+        public int ValorAtaque{get; set;}
+        public int ValorDefensa{get; set;}
         public int Magia{get; set;}
         public int Vida{get; set;}
-        public int VidaInicial {get; set;}
         public string Tipo{get; }
         public List<Elemento> Items {get; }
         
-        public Personaje(string nombre, int magia, int vida, string tipo)
+        public Personaje(string nombre, int magia, int vida, string tipo, int valorAtaque, int valorDefensa)
         {
             Nombre=nombre;
             Magia=magia;
             Vida=vida;
-            VidaInicial=vida;
             Tipo=tipo;
+            ValorAtaque=valorAtaque;
+            ValorDefensa=valorDefensa;
             Items= new List<Elemento>();
         }
-        public void Ataque(Personaje objetivo)
-        {
-            int daño=AtaqueTotal*5; 
-            objetivo.Vida-=daño;
-            Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {daño} puntos de daño.");
-        }
-        public void Defensa()
-        {
-            int resistenciaExtra=DefensaTotal*2; 
-            Magia-=10; 
-            Console.WriteLine($"{Nombre} se defiende y gana {resistenciaExtra} puntos de resistencia.");
-        }
+    
         public void Hechizo(Personaje objetivo )
         {
-            if (Tipo== "Wizard")
+            if (Tipo== "Mago")
             {
                 int poderHechizo = Magia * 3; 
                 Magia-=20; 
@@ -47,24 +36,48 @@ namespace RolePlay
             }
         }
        
-        public void calcularAtaque(Elemento item)
+        public int calcularAtaque()
         {
-            if (item.ValorAtaque != 0)
+            int valorAtaqueTotal = ValorAtaque;
+
+            foreach (Elemento item in Items)
             {
-                int aumentoAtaque = item.ValorAtaque;
-                AtaqueTotal += aumentoAtaque;
-                Console.WriteLine($"El ataque total del personaje es de {AtaqueTotal}");
+                if (item.Tipo == "Arma")
+                {
+                    valorAtaqueTotal += item.ValorAtaque;
+                }
             }
+
+            return valorAtaqueTotal;
         }
 
-        public void calcularDefensa(Elemento item)
+        public int calcularDefensa()
         {
-            if (item.ValorDefensa != 0)
+            int valorDefensaTotal = ValorDefensa;
+
+            foreach (Elemento item in Items)
             {
-                int defensaTotal = item.ValorDefensa;
-                Vida+=defensaTotal;
-                Console.WriteLine($"La defensa total del personaje es de {DefensaTotal}");
+                if (item.Tipo == "Armadura")
+                {
+                    valorDefensaTotal += item.ValorDefensa;
+                }
             }
+
+            return valorDefensaTotal;
+        }
+
+        public void Atacar(Personaje objetivo)
+        {
+            int ataqueTotal = calcularAtaque();
+            objetivo.Vida -= ataqueTotal;
+            Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {ataqueTotal} puntos de daño.");
+        }
+
+        public void Defensa()
+        {
+            int defensaTotal = calcularDefensa();
+            Vida += defensaTotal;
+            Console.WriteLine($"{Nombre} se defiende y gana {defensaTotal} puntos de resistencia.");
         }
 
         

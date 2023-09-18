@@ -8,7 +8,7 @@ namespace RolePlay
         public List<string> HabilidadesMagicas{get; }
         public LibroDeHechizos LibroDeHechizos{get; }
 
-        public Mago(string nombre, int vida, int magia):base(nombre, vida, magia , "Wizard")
+        public Mago(string nombre, int vida, int magia):base(nombre, vida, magia , "Mago", 20, 10)
         {
             HabilidadesMagicas=new List<string>();
             LibroDeHechizos = new LibroDeHechizos("Libro de Hechizos de " + nombre);

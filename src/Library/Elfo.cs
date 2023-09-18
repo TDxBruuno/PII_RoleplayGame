@@ -5,7 +5,7 @@ namespace RolePlay
 {
     public class Elfo: Personaje
     {
-        public Elfo(string nombre, int vida, int magia):base(nombre, vida, magia , "Elfo")
+        public Elfo(string nombre, int vida, int magia):base(nombre, vida, magia , "Elfo", 15, 5)
         {
             // caracteristicas especiales
         }

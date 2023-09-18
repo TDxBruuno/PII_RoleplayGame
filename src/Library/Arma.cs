@@ -5,7 +5,7 @@ namespace RolePlay
 {
     public class Arma : Elemento
     {
-        public Arma(string nombre, int valorAttack) : base(nombre, "Arma", valorAttack)
+        public Arma(string nombre, int valorAttack) : base(nombre, "Arma", valorAttack, 15)
         {
             
         }

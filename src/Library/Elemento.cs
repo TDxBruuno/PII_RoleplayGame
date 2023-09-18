@@ -10,7 +10,7 @@ namespace RolePlay
         public int ValorAtaque{get; set; }
         public int ValorDefensa{get; set; }
     
-        public Elemento(string nombre, string tipo, int valorAttack=0, int valorDefend=0)
+        public Elemento(string nombre, string tipo, int valorAttack, int valorDefend)
         {
             Nombre=nombre;
             Tipo=tipo;
