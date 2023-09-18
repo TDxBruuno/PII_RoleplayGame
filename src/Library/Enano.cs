@@ -8,15 +8,13 @@ namespace RolePlay
         public string Nombre{get; }
         public int ValorAtaque{get; set;}
         public int ValorDefensa{get; set;}
-        public int Magia{get; set;}
         public int Vida{get; set;}
         public string Tipo{get; }
         public List<Elemento> Items {get; }
        
-        public Enano(string nombre, int magia, int vida, string tipo, int valorAtaque, int valorDefensa)
+        public Enano(string nombre, int vida, string tipo, int valorAtaque, int valorDefensa)
         {
             Nombre=nombre;
-            Magia=magia;
             Vida=vida;
             Tipo=tipo;
             ValorAtaque=valorAtaque;
@@ -24,28 +22,6 @@ namespace RolePlay
             Items= new List<Elemento>();
         }
 
-        public void Hechizo(Elfo objetivo )
-        {
-            if (Tipo== "Mago")
-            {
-                int poderHechizo = Magia * 3; 
-                Magia-=20; 
-                objetivo.Vida-=poderHechizo;
-                Console.WriteLine($"{Nombre} lanza un hechizo a {objetivo.Nombre} y causa {poderHechizo} puntos de daño.");
-            }
-        }
-
-        public void Hechizo(Mago objetivo )
-        {
-            if (Tipo== "Mago")
-            {
-                int poderHechizo = Magia * 3; 
-                Magia-=20; 
-                objetivo.Vida-=poderHechizo;
-                Console.WriteLine($"{Nombre} lanza un hechizo a {objetivo.Nombre} y causa {poderHechizo} puntos de daño.");
-            }
-        }
-       
         public int calcularAtaque()
         {
             int valorAtaqueTotal = ValorAtaque;
@@ -81,6 +57,7 @@ namespace RolePlay
             int ataqueTotal = calcularAtaque();
             objetivo.Vida -= ataqueTotal;
             Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {ataqueTotal} puntos de daño.");
+            Console.WriteLine($"vida objetivo: {objetivo.Vida}");
         }
 
         public void Atacar(Elfo objetivo)
@@ -88,6 +65,7 @@ namespace RolePlay
             int ataqueTotal = calcularAtaque();
             objetivo.Vida -= ataqueTotal;
             Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {ataqueTotal} puntos de daño.");
+            Console.WriteLine($"vida objetivo: {objetivo.Vida}");
         }
 
         public void Atacar(Mago objetivo)
@@ -95,6 +73,7 @@ namespace RolePlay
             int ataqueTotal = calcularAtaque();
             objetivo.Vida -= ataqueTotal;
             Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {ataqueTotal} puntos de daño.");
+            Console.WriteLine($"vida objetivo: {objetivo.Vida}");
         }
 
         public void Defensa()

@@ -82,6 +82,7 @@ namespace RolePlay
             int ataqueTotal = calcularAtaque();
             objetivo.Vida -= ataqueTotal;
             Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {ataqueTotal} puntos de daño.");
+            Console.WriteLine($"vida objetivo: {objetivo.Vida}");
         }
 
         public void Atacar(Elfo objetivo)
@@ -89,6 +90,7 @@ namespace RolePlay
             int ataqueTotal = calcularAtaque();
             objetivo.Vida -= ataqueTotal;
             Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {ataqueTotal} puntos de daño.");
+            Console.WriteLine($"vida objetivo: {objetivo.Vida}");
         }
 
         public void Atacar(Mago objetivo)
@@ -96,6 +98,7 @@ namespace RolePlay
             int ataqueTotal = calcularAtaque();
             objetivo.Vida -= ataqueTotal;
             Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {ataqueTotal} puntos de daño.");
+            Console.WriteLine($"vida objetivo: {objetivo.Vida}");
         }
 
         public void Defensa()
@@ -111,7 +114,7 @@ namespace RolePlay
         public Mago(string nombre, int vida, int magia)
         {
             HabilidadesMagicas=new List<string>();
-            LibroDeHechizos = new LibroDeHechizos("Libro de Hechizos de " + nombre);
+    //        LibroDeHechizos = new LibroDeHechizos("Libro de Hechizos de " + nombre);
         }
     
         public void EstudiarHechizo(string nombreHechizo, int poderHechizo)

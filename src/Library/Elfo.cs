@@ -81,6 +81,7 @@ namespace RolePlay
             int ataqueTotal = calcularAtaque();
             objetivo.Vida -= ataqueTotal;
             Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {ataqueTotal} puntos de daño.");
+            Console.WriteLine($"vida objetivo: {objetivo.Vida}");
         }
 
         public void Atacar(Elfo objetivo)
@@ -88,6 +89,7 @@ namespace RolePlay
             int ataqueTotal = calcularAtaque();
             objetivo.Vida -= ataqueTotal;
             Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {ataqueTotal} puntos de daño.");
+            Console.WriteLine($"vida objetivo: {objetivo.Vida}");
         }
 
         public void Atacar(Mago objetivo)
@@ -95,6 +97,7 @@ namespace RolePlay
             int ataqueTotal = calcularAtaque();
             objetivo.Vida -= ataqueTotal;
             Console.WriteLine($"{Nombre} ataca a {objetivo.Nombre} y le causa {ataqueTotal} puntos de daño.");
+            Console.WriteLine($"vida objetivo: {objetivo.Vida}");
         }
 
         public void Defensa()
