@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 namespace RolePlay
 {
-    public class Mago: Personaje
+    public class Mago
     {
 
         public string Nombre{get; }
@@ -14,7 +14,7 @@ namespace RolePlay
         public string Tipo{get; }
         public List<Elemento> Items {get; }
        
-        public Enano(string nombre, int magia, int vida, string tipo, int valorAtaque, int valorDefensa)
+        public Mago(string nombre, int magia, int vida, string tipo, int valorAtaque, int valorDefensa)
         {
             Nombre=nombre;
             Magia=magia;
@@ -108,7 +108,7 @@ namespace RolePlay
         public List<string> HabilidadesMagicas{get; }
         public LibroDeHechizos LibroDeHechizos{get; }
 
-        public Mago(string nombre, int vida, int magia):base(nombre, vida, magia , "Mago", 20, 10)
+        public Mago(string nombre, int vida, int magia)
         {
             HabilidadesMagicas=new List<string>();
             LibroDeHechizos = new LibroDeHechizos("Libro de Hechizos de " + nombre);
