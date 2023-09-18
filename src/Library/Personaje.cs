@@ -19,6 +19,7 @@ namespace RolePlay
             Nombre=nombre;
             Magia=magia;
             Vida=vida;
+            Vida=vida;
             Tipo=tipo;
             Items= new List<Elemento>();
         }
@@ -44,8 +45,6 @@ namespace RolePlay
                 Console.WriteLine($"{Nombre} lanza un hechizo a {objetivo.Nombre} y causa {poderHechizo} puntos de daño.");
             }
         }
-       
-       
        
         public void calcularAtaque(Elemento item)
         {

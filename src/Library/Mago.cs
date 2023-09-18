@@ -13,11 +13,7 @@ namespace RolePlay
             HabilidadesMagicas=new List<string>();
             LibroDeHechizos = new LibroDeHechizos("Libro de Hechizos de " + nombre);
         }
-        public void AprenderHechizo(string hechizo)
-        {
-            LibroDeHechizos.AgregarHechizo(hechizo);
-
-        }
+    
         public void EstudiarHechizo(string nombreHechizo, int poderHechizo)
         {
             Hechizo nuevoHechizo=new Hechizo(nombreHechizo, poderHechizo);
